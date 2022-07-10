@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'org.springframework.boot' version '2.4.5'
+}
+
+ext {
+    springVerson = '2.4.5'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springVerson}")
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    api 'org.apache.commons:commons-lang3:3.11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
